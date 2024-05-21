@@ -7,7 +7,9 @@ namespace Bài_1
     internal class Program
     {
         private const string CATEGORY = "Category";
+
         private const string PRODUCT = "Product";
+
         private const string ACCESSOTION = "Accessotion";
         static void Main(string[] args)
         {
@@ -32,6 +34,7 @@ namespace Bài_1
             databaseDemo.PrintTableTest();*/
 
             //CategoryDaoDemo
+            
             CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
 
             categoryDaoDemo.InsertTest(CATEGORY, new Category(111, "abc"));
@@ -43,6 +46,7 @@ namespace Bài_1
             categoryDaoDemo.DeleteTest(CATEGORY, 111);
 
             categoryDaoDemo.Infor(CATEGORY);
+            Console.WriteLine("\n");
 
             //ProductDaoDemo
             ProductDaoDemo productDaoDemo = new ProductDaoDemo();
@@ -56,6 +60,16 @@ namespace Bài_1
             productDaoDemo.DeleteTest(PRODUCT, 111);
 
             productDaoDemo.Infor(PRODUCT);
+            Console.WriteLine("\n");
+            new Database();
+
+            Console.WriteLine("\n");
+
+            productDaoDemo.Infor(PRODUCT);
+
+            Console.WriteLine("\n");
+
+            categoryDaoDemo.Infor(CATEGORY);
 
         }
     }

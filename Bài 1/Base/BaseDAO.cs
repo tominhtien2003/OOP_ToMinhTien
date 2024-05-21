@@ -7,6 +7,12 @@ namespace Bài_1.Base
 {
     internal abstract class BaseDAO 
     {
+        public enum ChooseMethodVoid
+        {
+            Delete,
+            Insert,
+            Update
+        }
         //Ở đây cháu dùng virual để có thêm lớp cơ sở .
 
         /*

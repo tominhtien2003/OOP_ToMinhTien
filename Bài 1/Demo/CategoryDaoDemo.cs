@@ -11,7 +11,7 @@ namespace Bài_1.Demo
     {
         public void DeleteTest(string name, int id)
         {
-            Delete(name, id);
+            ExcuteMethod(ChooseMethodVoid.Delete, name, id);
         }
         public List<ITypeObject> FindAllTest(string name)
         {
@@ -25,12 +25,12 @@ namespace Bài_1.Demo
 
         public void InsertTest(string name, ITypeObject _object)
         {
-            Insert(name, _object);
+            ExcuteMethod(ChooseMethodVoid.Insert, name, 0, _object);
         }
 
         public void UpdateTest(string name, int id, ITypeObject obj)
         {
-            Update(name, id, obj);
+            ExcuteMethod(ChooseMethodVoid.Update, name, id, obj);
         }
     }
 }

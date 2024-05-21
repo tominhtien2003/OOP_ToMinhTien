@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Bài_1.dao
 {
@@ -12,6 +13,11 @@ namespace Bài_1.dao
             if (instance == null)
             {
                 instance = this;
+            }
+            else
+            {
+                Console.WriteLine("singleton is init");
+                return;
             }
             database = new Dictionary<string, List<ITypeObject>>();             
         }

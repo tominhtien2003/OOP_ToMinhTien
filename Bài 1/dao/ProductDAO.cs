@@ -1,15 +1,29 @@
 ﻿using Bài_1.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Bài_1.dao
 {
     internal class ProductDAO : BaseDAO
-    {
-        protected override void Delete(string name, int id)
+    {       
+        public void ExcuteMethod(ChooseMethodVoid chooseMethodVoid , string name , int id = 0 , ITypeObject _object = null)
         {
-            base.Delete(name, id);
+            switch (chooseMethodVoid)
+            {
+                case ChooseMethodVoid.Delete:
+                    base.Delete(name , id );
+                    return;
+                case ChooseMethodVoid.Update:
+                    base.Update(name , id , _object);
+                    return;
+                case ChooseMethodVoid.Insert:
+                    base.Insert(name,_object);
+                    return;
+                default:
+                    Console.WriteLine("Data input fail!");
+                    return;
+            }
         }
-
         protected override List<ITypeObject> FindAll(string name)
         {
             return base.FindAll(name);
@@ -18,16 +32,6 @@ namespace Bài_1.dao
         protected override ITypeObject FindById(string name, int id)
         {
             return base.FindById(name, id);
-        }
-
-        protected override void Insert(string name, ITypeObject _object)
-        {
-            base.Insert(name, _object);
-        }
-
-        protected override void Update(string name, int id, ITypeObject obj)
-        {
-            base.Update(name, id, obj);
         }
         public override void Infor(string name)
         {
