@@ -8,7 +8,7 @@ namespace Bài_1
     {
         private const string CATEGORY = "Category";
         private const string PRODUCT = "Product";
-        private const string Accessotion = "Accessotion";
+        private const string ACCESSOTION = "Accessotion";
         static void Main(string[] args)
         {
             new Database();
