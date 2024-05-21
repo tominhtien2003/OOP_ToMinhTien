@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bài_1
+namespace Bài_1.dao
 {
-    public interface ITypeObject
+    internal class CategoryDAO
     {
-        int GetId();
-        void Infor();
+
     }
 }

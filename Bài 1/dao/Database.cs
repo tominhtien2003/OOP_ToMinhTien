@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bài_1.dao
 {
-    internal class Database
+    public class Database
     {
         public Dictionary<string, List<ITypeObject>> database;
         public Database()

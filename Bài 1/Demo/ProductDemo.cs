@@ -11,6 +11,7 @@ namespace Bài_1
         public ProductDemo() { }
         public ProductDemo(int id, string name, int categoryId) : base(id, name, categoryId)
         {
+
         }
 
         public Product CreateProductTest()
