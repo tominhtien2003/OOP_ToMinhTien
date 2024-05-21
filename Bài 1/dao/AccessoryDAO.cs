@@ -4,26 +4,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Bài_1.dao
 {
-    internal class AccessoryDAO : BaseDAO , IDao
+    internal class AccessoryDAO : BaseDAO
     {
-        public string NAME { get => "Accessory"; }
-
-        protected override bool Insert(ITypeObject _object)
+        protected override void Delete(string name, int id)
         {
+            base.Delete(name,id);
+        }
 
-            Database.instance.InsertTable(NAME, _object);
+        protected override List<ITypeObject> FindAll(string name)
+        {
+            return base.FindAll(name);
+        }
 
-            foreach (ITypeObject obj in Database.instance.database[NAME])
-            {
-                if (obj == _object)
-                {
-                    return true;
-                }
-            }
-            return false;
+        protected override ITypeObject FindById(string name, int id)
+        {
+            return base.FindById(name,id);
+        }
+
+        protected override void Insert(string name, ITypeObject _object)
+        {
+            base.Insert(name, _object);
+        }
+
+        protected override void Update(string name, int id, ITypeObject obj)
+        {
+            base.Update(name, id, obj);
         }
     }
 }

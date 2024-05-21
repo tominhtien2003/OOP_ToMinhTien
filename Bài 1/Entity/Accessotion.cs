@@ -29,11 +29,9 @@ namespace Bài_1.Entity
         public void SetName(string name) { this.name = name; }
         public void Infor()
         {
-
             Console.WriteLine("Id : " + id);
 
             Console.WriteLine("Name : " + name);
-
         }
     }
 }

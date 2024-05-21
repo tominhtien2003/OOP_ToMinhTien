@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 namespace Bài_1
 {
     internal class Category : ITypeObject
