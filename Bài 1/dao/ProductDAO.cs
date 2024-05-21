@@ -2,9 +2,9 @@
 
 namespace Bài_1.dao
 {
-    internal class CategoryDAO : BaseDAO , IDao
+    internal class ProductDAO : BaseDAO , IDao
     {
-        public string NAME => "Category";
+        public string NAME => "Product";
 
         protected override bool Insert(ITypeObject _object)
         {

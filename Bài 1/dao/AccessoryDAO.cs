@@ -1,10 +1,15 @@
 ﻿using Bài_1.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Bài_1.dao
 {
-    internal class CategoryDAO : BaseDAO , IDao
+    internal class AccessoryDAO : BaseDAO , IDao
     {
-        public string NAME => "Category";
+        public string NAME { get => "Accessory"; }
 
         protected override bool Insert(ITypeObject _object)
         {
