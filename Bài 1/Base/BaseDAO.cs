@@ -7,12 +7,12 @@ namespace Bài_1.Base
 {
     internal abstract class BaseDAO 
     {
-
         //Ở đây cháu dùng virual để có thêm lớp cơ sở .
 
         /*
         * thêm đối tượng vào database
         */
+        public abstract void Infor(string name);
         protected virtual void Insert(string name,ITypeObject obj)
         {
             Database.instance.InsertTable(name, obj);

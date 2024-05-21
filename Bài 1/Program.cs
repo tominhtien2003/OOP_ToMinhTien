@@ -1,20 +1,27 @@
-﻿using Bài_1.Demo;
+﻿using Bài_1.dao;
+using Bài_1.Demo;
+using System;
 
 namespace Bài_1
 {
     internal class Program
     {
+        private const string CATEGORY = "Category";
+        private const string PRODUCT = "Product";
+        private const string Accessotion = "Accessotion";
         static void Main(string[] args)
         {
+            new Database();
             //Run Bài 2
-            ProductDemo productDemo = new ProductDemo();
+
+            /*ProductDemo productDemo = new ProductDemo();
 
             Product product = productDemo.CreateProductTest();
 
-            product.Infor();
+            product.Infor();*/
 
             // Run Bài 5
-            DatabaseDemo databaseDemo = new DatabaseDemo();
+            /*DatabaseDemo databaseDemo = new DatabaseDemo();
 
             databaseDemo.InitDatabaseDemo();
 
@@ -22,7 +29,34 @@ namespace Bài_1
 
             databaseDemo.UpdateTableTest("Category", new Category(3, "ba ba"), 3);
 
-            databaseDemo.PrintTableTest();
+            databaseDemo.PrintTableTest();*/
+
+            //CategoryDaoDemo
+            CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
+
+            categoryDaoDemo.InsertTest(CATEGORY, new Category(111, "abc"));
+
+            categoryDaoDemo.InsertTest(CATEGORY, new Category(222, "def"));
+
+            categoryDaoDemo.UpdateTest(CATEGORY, 111, new Category(333, "xyz"));
+
+            categoryDaoDemo.DeleteTest(CATEGORY, 111);
+
+            categoryDaoDemo.Infor(CATEGORY);
+
+            //ProductDaoDemo
+            ProductDaoDemo productDaoDemo = new ProductDaoDemo();
+
+            productDaoDemo.InsertTest(PRODUCT, new Product(111, "abc",111));
+
+            productDaoDemo.InsertTest(PRODUCT, new Product(222, "def",222));
+
+            productDaoDemo.UpdateTest(PRODUCT, 111, new Product(333, "xyz",333));
+
+            productDaoDemo.DeleteTest(PRODUCT, 111);
+
+            productDaoDemo.Infor(PRODUCT);
+
         }
     }
 }

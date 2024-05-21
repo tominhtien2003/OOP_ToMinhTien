@@ -7,20 +7,30 @@ using System.Threading.Tasks;
 
 namespace Bài_1.Demo
 {
-    internal class CategoryDaoDemo : Database
+    internal class CategoryDaoDemo : CategoryDAO
     {
-        private const string CATEGORY = "Category";
-        public void InsertTest(Category _object)
+        public void DeleteTest(string name, int id)
         {
-            InsertTable(CATEGORY, _object);
+            Delete(name, id);
         }
-        public void UpdateTest(Category _object , int id)
+        public List<ITypeObject> FindAllTest(string name)
         {
-            UpdateTable(CATEGORY, _object , id);
+            return FindAll(name);
         }
-        public List<ITypeObject> FindAllTest()
+
+        public ITypeObject FindByIdTest(string name, int id)
         {
-            return SelectTable(CATEGORY);
+            return base.FindById(name, id);
+        }
+
+        public void InsertTest(string name, ITypeObject _object)
+        {
+            Insert(name, _object);
+        }
+
+        public void UpdateTest(string name, int id, ITypeObject obj)
+        {
+            Update(name, id, obj);
         }
     }
 }

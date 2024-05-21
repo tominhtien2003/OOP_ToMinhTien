@@ -16,11 +16,9 @@ namespace Bài_1.Entity
         public Accessotion() { }
         public Accessotion(int id, string name)
         {
-
             this.id = id;
 
             this.name = name;
-
         }
 
         public int GetId() { return id; }

@@ -20,6 +20,14 @@ namespace Bài_1.dao
             return base.FindById(name, id);
         }
 
+        public override void Infor(string name)
+        {
+            foreach (ITypeObject obj in Database.instance.database[name])
+            {
+                obj.Infor();
+            }
+        }
+
         protected override void Insert(string name, ITypeObject _object)
         {
             base.Insert(name, _object);

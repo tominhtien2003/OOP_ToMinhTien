@@ -29,5 +29,12 @@ namespace Bài_1.dao
         {
             base.Update(name, id, obj);
         }
+        public override void Infor(string name)
+        {
+            foreach (ITypeObject obj in Database.instance.database[name])
+            {
+                obj.Infor();
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bài_1.dao
 {
-    public abstract class Database
+    public class Database
     {
         public static Database instance { get; private set; }
         public Dictionary<string, List<ITypeObject>> database;
@@ -13,7 +13,7 @@ namespace Bài_1.dao
             {
                 instance = this;
             }
-            database = new Dictionary<string, List<ITypeObject>>();
+            database = new Dictionary<string, List<ITypeObject>>();             
         }
         /*
          *Thêm đối tượng vào database theo kiểu name
