@@ -15,11 +15,15 @@ namespace Bài_1
 
         public Product CreateProductTest()
         {
+
             Product productTest = new Product(1, "product_1", 1);
+
             return productTest;
+
         }
         public void PrintProduct(Product product)
         {
+
             product.Infor();
             
         }
