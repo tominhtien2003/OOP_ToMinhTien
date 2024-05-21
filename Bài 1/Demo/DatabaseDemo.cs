@@ -1,4 +1,5 @@
-﻿using Bài_1.dao;
+﻿using Bài_1.Base;
+using Bài_1.dao;
 using Bài_1.Entity;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,15 @@ namespace Bài_1.Demo
 {
     internal class DatabaseDemo : Database
     {
-        public void InsertTableTest(string name , ITypeObject _object)
+        public void InsertTableTest(string name , BaseRow _object)
         {
             InsertTable(name , _object);
         }
-        public List<ITypeObject> SelectTableTest(string name)
+        public List<BaseRow> SelectTableTest(string name)
         {
             return SelectTable(name);
         }
-        public void UpdateTableTest(string name, ITypeObject _object, int id)
+        public void UpdateTableTest(string name, BaseRow _object, int id)
         {
             UpdateTable(name , _object, id);
         }
@@ -62,9 +63,9 @@ namespace Bài_1.Demo
         {
             foreach (string name in database.Keys)
             {
-                List<ITypeObject> list = database[name];
+                List<BaseRow> list = database[name];
 
-                foreach (ITypeObject obj in list)
+                foreach (BaseRow obj in list)
                 {
                     obj.Infor();
                 }

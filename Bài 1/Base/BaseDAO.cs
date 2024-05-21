@@ -6,27 +6,18 @@ using System.Xml.Linq;
 namespace Bài_1.Base
 {
     internal abstract class BaseDAO 
-    {
-        public enum ChooseMethodVoid
-        {
-            Delete,
-            Insert,
-            Update
-        }
-        //Ở đây cháu dùng virual để có thêm lớp cơ sở .
-
+    { 
         /*
         * thêm đối tượng vào database
         */
-        public abstract void Infor(string name);
-        protected virtual void Insert(string name,ITypeObject obj)
+        protected virtual void Insert(string name ,BaseRow obj)
         {
             Database.instance.InsertTable(name, obj);
         }
         /*
          *Cập nhật đối tượng 
          */
-        protected virtual void Update(string name,int id, ITypeObject obj)
+        protected virtual void Update(string name ,int id , BaseRow obj)
         {
             Database.instance.UpdateTable(name, obj, id);
         }
@@ -40,16 +31,16 @@ namespace Bài_1.Base
         /*
          * Lấy tất cả đối tượng kiểu name
          */
-        protected virtual List<ITypeObject> FindAll(string name)
+        protected virtual List<BaseRow> FindAll(string name)
         {
             return Database.instance.SelectTable(name);
         }
         /*
-         * tìm đối tượng theo id
+         * tìm đối tượng theo id kiểu name
          */
-        protected virtual ITypeObject FindById(string name, int id)
+        protected virtual BaseRow FindById(string name, int id)
         {
-            foreach (ITypeObject obj in Database.instance.database[name])
+            foreach (BaseRow obj in Database.instance.database[name])
             {
                 if (id == obj.GetId())
                 {
@@ -58,6 +49,9 @@ namespace Bài_1.Base
             }
             return null;
         }
-
+        /*
+         * thông tin của đối tượng
+         */
+        public abstract void Infor(string name);
     }
 }

@@ -2,24 +2,48 @@
 using System.Collections.Generic;
 namespace Bài_1.Base
 {
-    internal abstract class BaseRow
+    public abstract class BaseRow
     {
+        protected int id;
+        protected string name; 
+
         /*
          * Lấy Id của đối tượng
          */
-        protected abstract int GetId();
+        public virtual int GetId()
+        {
+            return id;
+        }
         /*
-         * Lấy thông tin của đối tượng
+         * Lấy tên của đối tượng
          */
-        protected abstract void Infor();
+        public virtual string GetName()
+        {
+            return name;
+        }
         /*
          * thay đổi Id của đối tượng
          */
-        protected abstract void SetId(int id);
+        public virtual void SetId(int id)
+        {
+            this.id = id;
+        }
         /*
          * thay đổi name của đối tượng
          */
-        protected abstract void SetName(string name);
+        public virtual void SetName(string name)
+        {
+            this.name = name;
+        }
+        /*
+         * Lấy thông tin của đối tượng
+         */
+        public virtual void Infor()
+        {
+            Console.WriteLine("Id : " + id);
+
+            Console.WriteLine("Name : " + name);
+        }
 
     }
 }

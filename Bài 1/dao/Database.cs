@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bài_1.Base;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -7,29 +8,29 @@ namespace Bài_1.dao
     public class Database
     {
         public static Database instance { get; private set; }
-        public Dictionary<string, List<ITypeObject>> database;
+        public Dictionary<string, List<BaseRow>> database;
         public Database()
         {
             if (instance == null)
             {
+                database = new Dictionary<string, List<BaseRow>>();
                 instance = this;
             }
             else
             {
                 Console.WriteLine("singleton is init");
                 return;
-            }
-            database = new Dictionary<string, List<ITypeObject>>();             
+            }      
         }
         /*
          *Thêm đối tượng vào database theo kiểu name
          */
-        public void InsertTable(string name, ITypeObject _object)
+        public void InsertTable(string name, BaseRow _object)
         {
             if (!database.ContainsKey(name))
             {
 
-                database[name] = new List<ITypeObject>();
+                database[name] = new List<BaseRow>();
             }
 
             database[name].Add(_object);
@@ -37,16 +38,16 @@ namespace Bài_1.dao
         /*
          * Lấy tất cả đối tượng của kiểu name
          */
-        public List<ITypeObject> SelectTable(string name)
+        public List<BaseRow> SelectTable(string name)
         {
-            List<ITypeObject> result = database[name];
+            List<BaseRow> result = database[name];
 
             return result;
         }
         /*
          *Cập nhật đối tượng theo kiểu name với id 
          */
-        public void UpdateTable(string name, ITypeObject _object,int id)
+        public void UpdateTable(string name, BaseRow _object,int id)
         {
             if (!database.ContainsKey(name))
             {
@@ -54,7 +55,7 @@ namespace Bài_1.dao
             }
             else
             {
-                foreach (ITypeObject obj in database[name])
+                foreach (BaseRow obj in database[name])
                 {
                     if (obj.GetId() == id)
                     {
@@ -78,7 +79,7 @@ namespace Bài_1.dao
             }
             else
             {
-                foreach (ITypeObject obj in database[name])
+                foreach (BaseRow obj in database[name])
                 {
                     if (obj.GetId() == id)
                     {

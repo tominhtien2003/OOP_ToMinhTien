@@ -12,6 +12,7 @@ namespace Bài_1
          * Lấy Id của đối tượng
          */
         int GetId();
+        string GetName();
         /*
          * Lấy thông tin của đối tượng
          */

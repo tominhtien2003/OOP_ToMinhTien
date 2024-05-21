@@ -16,28 +16,18 @@ namespace Bài_1
             new Database();
             //Run Bài 2
 
-            /*ProductDemo productDemo = new ProductDemo();
+            ProductDemo productDemo = new ProductDemo();
 
             Product product = productDemo.CreateProductTest();
 
-            product.Infor();*/
+            product.Infor();
 
-            // Run Bài 5
-            /*DatabaseDemo databaseDemo = new DatabaseDemo();
-
-            databaseDemo.InitDatabaseDemo();
-
-            // cháu thấy câu 7 là câu 4.3 ạ !
-
-            databaseDemo.UpdateTableTest("Category", new Category(3, "ba ba"), 3);
-
-            databaseDemo.PrintTableTest();*/
 
             //CategoryDaoDemo
-            
+
             CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
 
-            categoryDaoDemo.InsertTest(CATEGORY, new Category(111, "abc"));
+            categoryDaoDemo.InsertTest(CATEGORY,new Category(111, "abc"));
 
             categoryDaoDemo.InsertTest(CATEGORY, new Category(222, "def"));
 
@@ -51,16 +41,16 @@ namespace Bài_1
             //ProductDaoDemo
             ProductDaoDemo productDaoDemo = new ProductDaoDemo();
 
-            productDaoDemo.InsertTest(PRODUCT, new Product(111, "abc",111));
+            productDaoDemo.InsertTest(PRODUCT,new Product(111, "abc", 111));
 
-            productDaoDemo.InsertTest(PRODUCT, new Product(222, "def",222));
+            productDaoDemo.InsertTest(PRODUCT, new Product(222, "def", 222));
 
-            productDaoDemo.UpdateTest(PRODUCT, 111, new Product(333, "xyz",333));
+            productDaoDemo.UpdateTest(PRODUCT, 111, new Product(333, "xyz", 333));
 
             productDaoDemo.DeleteTest(PRODUCT, 111);
 
             productDaoDemo.Infor(PRODUCT);
-            Console.WriteLine("\n");
+
             new Database();
 
             Console.WriteLine("\n");
@@ -70,6 +60,7 @@ namespace Bài_1
             Console.WriteLine("\n");
 
             categoryDaoDemo.Infor(CATEGORY);
+
 
         }
     }

@@ -9,10 +9,6 @@ namespace Bài_1
     internal class ProductDemo : Product
     {
         public ProductDemo() { }
-        public ProductDemo(int id, string name, int categoryId) : base(id, name, categoryId)
-        {
-
-        }
 
         public Product CreateProductTest()
         {

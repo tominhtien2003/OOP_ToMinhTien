@@ -1,4 +1,5 @@
-﻿using Bài_1.dao;
+﻿using Bài_1.Base;
+using Bài_1.dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +12,26 @@ namespace Bài_1.Demo
     {
         public void DeleteTest(string name, int id)
         {
-            ExcuteMethod(ChooseMethodVoid.Delete, name, id);
+            base.Delete(name, id);
         }
-        public List<ITypeObject> FindAllTest(string name)
+        public List<BaseRow> FindAllTest(string name)
         {
-            return FindAll(name);
+            return base.FindAll(name);
         }
 
-        public ITypeObject FindByIdTest(string name, int id)
+        public BaseRow FindByIdTest(string name, int id)
         {
             return base.FindById(name, id);
         }
 
-        public void InsertTest(string name, ITypeObject _object)
+        public void InsertTest(string name, BaseRow _object)
         {
-            ExcuteMethod(ChooseMethodVoid.Insert, name, 0, _object);
+            base.Insert(name, _object);
         }
 
-        public void UpdateTest(string name, int id, ITypeObject obj)
+        public void UpdateTest(string name, int id, BaseRow obj)
         {
-            ExcuteMethod(ChooseMethodVoid.Update, name, id, obj);
+            base.Update(name, id, obj);
         }
     }
 }

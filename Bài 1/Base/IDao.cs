@@ -7,12 +7,12 @@ namespace Bài_1.Base
         /*
         * thêm đối tượng vào database
         */
-        void Insert(string name, ITypeObject obj);
+        void Insert(string name, BaseRow obj);
 
         /*
          *Cập nhật đối tượng 
          */
-        void Update(string name, int id, ITypeObject obj);
+        void Update(string name, int id, BaseRow obj);
 
         /*
          * Xoá đối tương
@@ -22,11 +22,11 @@ namespace Bài_1.Base
         /*
          * Lấy tất cả đối tượng kiểu name
          */
-        List<ITypeObject> FindAll(string name);
+        List<BaseRow> FindAll(string name);
 
         /*
          * tìm đối tượng theo id
          */
-        ITypeObject FindById(string name, int id);
+        BaseRow FindById(string name, int id);
     }
 }
