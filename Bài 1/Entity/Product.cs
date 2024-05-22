@@ -19,9 +19,18 @@ namespace Bài_1
             this.categoryId = category;
 
         }
+        /*
+         * Lấy Category của product
+         */
         public int GetCategory() { return categoryId; }
+        /*
+         * Thay đổi category của product
+         */
         public void SetCategory(int category) {  this.categoryId = category;}
 
+        /*
+         * Lấy thông tin của đối tượng
+         */
         public override void Infor()
         {
             base.Infor();

@@ -9,6 +9,9 @@ namespace Bài_1.dao
     {
         public static Database instance { get; private set; }
         public Dictionary<string, List<BaseRow>> database;
+        /*
+         * Hàm khởi tạo Database
+         */
         public Database()
         {
             if (instance == null)
