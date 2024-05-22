@@ -27,11 +27,11 @@ namespace Bài_1
 
             CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
 
-            categoryDaoDemo.InsertTest(CATEGORY,new Category(111, "abc"));
+            categoryDaoDemo.InsertTest(new Category(111, "abc"));
 
-            categoryDaoDemo.InsertTest(CATEGORY, new Category(222, "def"));
+            categoryDaoDemo.InsertTest(new Category(222, "def"));
 
-            categoryDaoDemo.UpdateTest(CATEGORY, 111, new Category(333, "xyz"));
+            categoryDaoDemo.UpdateTest(111, new Category(333, "xyz"));
 
             categoryDaoDemo.DeleteTest(CATEGORY, 111);
 
@@ -41,11 +41,11 @@ namespace Bài_1
             //ProductDaoDemo
             ProductDaoDemo productDaoDemo = new ProductDaoDemo();
 
-            productDaoDemo.InsertTest(PRODUCT,new Product(111, "abc", 111));
+            productDaoDemo.InsertTest(new Product(111, "abc", 111));
 
-            productDaoDemo.InsertTest(PRODUCT, new Product(222, "def", 222));
+            productDaoDemo.InsertTest(new Product(222, "def", 222));
 
-            productDaoDemo.UpdateTest(PRODUCT, 111, new Product(333, "xyz", 333));
+            productDaoDemo.UpdateTest(111, new Product(333, "xyz", 333));
 
             productDaoDemo.DeleteTest(PRODUCT, 111);
 
@@ -60,8 +60,6 @@ namespace Bài_1
             Console.WriteLine("\n");
 
             categoryDaoDemo.Infor(CATEGORY);
-
-
         }
     }
 }

@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Bài_1.Entity
 {
-    internal class Accessotion : BaseRow
+    public class Accessotion : BaseRow
     {
         public Accessotion() { }
         public Accessotion(int id, string name)
         {
-            SetId(id);
-            SetName(name);
+            this.id = id;
+            this.name = name;
+            typename = "Accessotion";
         }
     }
 }

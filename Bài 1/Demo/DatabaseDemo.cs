@@ -9,46 +9,53 @@ using System.Threading.Tasks;
 
 namespace Bài_1.Demo
 {
-    internal class DatabaseDemo : Database
+    public   class DatabaseDemo : Database
     {
-        /*
-         * Thêm đối tượng kiểu name
-         */
-        public void InsertTableTest(string name , BaseRow _object)
+        /// <summary>
+        /// Insert a object
+        /// </summary>
+        /// <param name="obj">Object need add</param>
+        public void InsertTableTest(BaseRow obj)
         {
-            InsertTable(name , _object);
+            InsertTable(obj);
         }
-        /*
-         * Lấy tất cả đối tượng kiểu name
-         */
+        /// <summary>
+        /// Take all object have type name
+        /// </summary>
+        /// <param name="name">Type of object</param>
+        /// <returns>List object have type name</returns>
         public List<BaseRow> SelectTableTest(string name)
         {
             return SelectTable(name);
         }
-        /*
-         * Cập nhật đối tượng kiểu name với id
-         */
-        public void UpdateTableTest(string name, BaseRow _object, int id)
+        /// <summary>
+        /// Update object with id
+        /// </summary>
+        /// <param name="obje">obje is update</param>
+        /// <param name="id">id of object update</param>
+        public void UpdateTableTest(BaseRow obj, int id)
         {
-            UpdateTable(name , _object, id);
+            UpdateTable(obj, id);
         }
-        /*
-         * Xoá đối tượng với id kiểu name
-         */
+        /// <summary>
+        /// Delete object with id and type name
+        /// </summary>
+        /// <param name="name">type name of obj</param>
+        /// <param name="id">id of object need delete</param>
         public void DeleteTableTest(string name, int id)
         {
             DeleteTable(name , id);
         }
-        /*
-         * Xoá toàn bộ đối tượng
-         */
+        /// <summary>
+        /// Delete all object
+        /// </summary>
         public void TruncateTableTest()
         {
             TruncateTable();
         }
-        /*
-         * Khởi tạo đối tượng
-         */
+        /// <summary>
+        /// Init object
+        /// </summary>
         public void InitDatabaseDemo()
         {
             // cháu dùng tên = "a" kéo dài cho tiện ạ . Tại vì chỉ là demo.
@@ -58,7 +65,7 @@ namespace Bài_1.Demo
             {
                 name_ += "a";
 
-                InsertTableTest("Product",new Product(i,name_,i));
+                InsertTableTest(new Product(i,name_,i));
             }
             name_ = "";
 
@@ -66,7 +73,7 @@ namespace Bài_1.Demo
             {
                 name_ += "a";
 
-                InsertTableTest("Category", new Category(i, name_));
+                InsertTableTest(new Category(i, name_));
             }
             name_ = "";
 
@@ -74,17 +81,17 @@ namespace Bài_1.Demo
             {
                 name_ += "a";
 
-                InsertTableTest("Accessotion", new Accessotion(i, name_));
+                InsertTableTest(new Accessotion(i, name_));
             }
         }
-        /*
-         * Xuất ra thông tin của tất cả đối tươgn
-         */
+        /// <summary>
+        /// Print infor of all object in database store
+        /// </summary>
         public void PrintTableTest()
         {
-            foreach (string name in database.Keys)
+            foreach (string name in stores.Keys)
             {
-                List<BaseRow> list = database[name];
+                List<BaseRow> list = stores[name];
 
                 foreach (BaseRow obj in list)
                 {

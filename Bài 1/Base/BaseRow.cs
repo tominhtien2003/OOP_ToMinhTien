@@ -4,40 +4,21 @@ namespace Bài_1.Base
 {
     public abstract class BaseRow
     {
-        protected int id;
-        protected string name; 
-
-        /*
-         * Lấy Id của đối tượng
-         */
-        public virtual int GetId()
+        public int id
         {
-            return id;
+            get { return id; }
+            set { id = value; }
         }
-        /*
-         * Lấy tên của đối tượng
-         */
-        public virtual string GetName()
+        public string name
         {
-            return name;
+            get { return name; }
+            set { name = value; }
         }
-        /*
-         * thay đổi Id của đối tượng
-         */
-        public virtual void SetId(int id)
+        public string typename
         {
-            this.id = id;
+            get { return typename; }
+            set {  typename = value; }
         }
-        /*
-         * thay đổi name của đối tượng
-         */
-        public virtual void SetName(string name)
-        {
-            this.name = name;
-        }
-        /*
-         * Lấy thông tin của đối tượng
-         */
         public virtual void Infor()
         {
             Console.WriteLine("Id : " + id);

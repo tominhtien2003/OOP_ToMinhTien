@@ -2,13 +2,14 @@
 using System;
 namespace Bài_1
 {
-    internal class Category : BaseRow
+    public class Category : BaseRow
     {
         public Category() { }
         public Category(int id, string name)
         {
-            SetId(id);
-            SetName(name);
+            this.id = id;
+            this.name = name;
+            typename = "Category";
         }
     }
 }

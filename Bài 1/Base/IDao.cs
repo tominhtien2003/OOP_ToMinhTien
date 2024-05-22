@@ -2,7 +2,7 @@
 
 namespace Bài_1.Base
 {
-    internal interface IDao
+    public interface IDao
     {
         /*
         * thêm đối tượng vào database

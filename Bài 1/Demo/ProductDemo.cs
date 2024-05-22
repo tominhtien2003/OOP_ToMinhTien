@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bài_1
 {
-    internal class ProductDemo : Product
+    public class ProductDemo : Product
     {
         public ProductDemo() { }
 
@@ -16,6 +16,10 @@ namespace Bài_1
 
             return productTest;
         }
+        /// <summary>
+        /// Take infor of object
+        /// </summary>
+        /// <param name="product">obj need take infor</param>
         public void PrintProduct(Product product)
         {
             product.Infor();           

@@ -3,9 +3,13 @@ using System;
 
 namespace Bài_1
 {
-    internal class Product : BaseRow
+    public class Product : BaseRow
     {
-        private int categoryId;
+        public int categoryId
+        {
+            get { return categoryId; }
+            set { categoryId = value; }
+        }
 
 
         public Product()
@@ -14,23 +18,15 @@ namespace Bài_1
         public Product(int id , string name ,int category)
         {
 
-            SetId(id);
-            SetName(name);
+            this.id = id;
+            this.name = name;
             this.categoryId = category;
+            typename = "Product";
 
         }
-        /*
-         * Lấy Category của product
-         */
-        public int GetCategory() { return categoryId; }
-        /*
-         * Thay đổi category của product
-         */
-        public void SetCategory(int category) {  this.categoryId = category;}
-
-        /*
-         * Lấy thông tin của đối tượng
-         */
+        /// <summary>
+        /// Take all information of obj
+        /// </summary>
         public override void Infor()
         {
             base.Infor();
