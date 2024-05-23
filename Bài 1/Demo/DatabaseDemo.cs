@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bài_1.Demo
 {
-    public   class DatabaseDemo : Database
+    public class DatabaseDemo
     {
         /// <summary>
         /// Insert a object
@@ -17,7 +17,7 @@ namespace Bài_1.Demo
         /// <param name="obj">Object need add</param>
         public void InsertTableTest(BaseRow obj)
         {
-            InsertTable(obj);
+            Database.instance.InsertTable(obj);
         }
         /// <summary>
         /// Take all object have type name
@@ -26,7 +26,7 @@ namespace Bài_1.Demo
         /// <returns>List object have type name</returns>
         public List<BaseRow> SelectTableTest(string name)
         {
-            return SelectTable(name);
+            return Database.instance.SelectTable(name);
         }
         /// <summary>
         /// Update object with id
@@ -35,7 +35,7 @@ namespace Bài_1.Demo
         /// <param name="id">id of object update</param>
         public void UpdateTableTest(BaseRow obj, int id)
         {
-            UpdateTable(obj, id);
+            Database.instance.UpdateTable(obj, id);
         }
         /// <summary>
         /// Delete object with id and type name
@@ -44,14 +44,14 @@ namespace Bài_1.Demo
         /// <param name="id">id of object need delete</param>
         public void DeleteTableTest(string name, int id)
         {
-            DeleteTable(name , id);
+            Database.instance.DeleteTable(name , id);
         }
         /// <summary>
         /// Delete all object
         /// </summary>
         public void TruncateTableTest()
         {
-            TruncateTable();
+            Database.instance.TruncateTable();
         }
         /// <summary>
         /// Init object
@@ -89,9 +89,9 @@ namespace Bài_1.Demo
         /// </summary>
         public void PrintTableTest()
         {
-            foreach (string name in stores.Keys)
+            foreach (string name in Database.instance.stores.Keys)
             {
-                List<BaseRow> list = stores[name];
+                List<BaseRow> list = Database.instance.stores[name];
 
                 foreach (BaseRow obj in list)
                 {

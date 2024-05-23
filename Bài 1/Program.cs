@@ -13,53 +13,43 @@ namespace Bài_1
         private const string ACCESSOTION = "Accessotion";
         static void Main(string[] args)
         {
-            new Database();
             //Run Bài 2
 
-            ProductDemo productDemo = new ProductDemo();
+            //ProductDemo productDemo = new ProductDemo();
 
-            Product product = productDemo.CreateProductTest();
+            //Product product = productDemo.CreateProductTest();
 
-            product.Infor();
+            //product.Infor();
 
 
             //CategoryDaoDemo
 
-            CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
+            //CategoryDaoDemo categoryDaoDemo = new CategoryDaoDemo();
 
-            categoryDaoDemo.InsertTest(new Category(111, "abc"));
+            //categoryDaoDemo.InsertTest(new Category(111, "abc"));
 
-            categoryDaoDemo.InsertTest(new Category(222, "def"));
+            //categoryDaoDemo.InsertTest(new Category(222, "def"));
 
-            categoryDaoDemo.UpdateTest(111, new Category(333, "xyz"));
+            //categoryDaoDemo.UpdateTest(111, new Category(333, "xyz"));
 
-            categoryDaoDemo.DeleteTest(CATEGORY, 111);
+            //categoryDaoDemo.DeleteTest(CATEGORY, 111);
 
-            categoryDaoDemo.Infor(CATEGORY);
-            Console.WriteLine("\n");
+            //categoryDaoDemo.Infor(CATEGORY);
+            //Console.WriteLine("\n");
 
-            //ProductDaoDemo
-            ProductDaoDemo productDaoDemo = new ProductDaoDemo();
+            ////ProductDaoDemo
+            //ProductDaoDemo productDaoDemo = new ProductDaoDemo();
 
-            productDaoDemo.InsertTest(new Product(111, "abc", 111));
+            //productDaoDemo.InsertTest(new Product(111, "abc", 111));
 
-            productDaoDemo.InsertTest(new Product(222, "def", 222));
+            //productDaoDemo.InsertTest(new Product(222, "def", 222));
 
-            productDaoDemo.UpdateTest(111, new Product(333, "xyz", 333));
+            //productDaoDemo.UpdateTest(111, new Product(333, "xyz", 333));
 
-            productDaoDemo.DeleteTest(PRODUCT, 111);
+            //productDaoDemo.DeleteTest(PRODUCT, 111);
 
-            productDaoDemo.Infor(PRODUCT);
+            //productDaoDemo.Infor(PRODUCT);
 
-            new Database();
-
-            Console.WriteLine("\n");
-
-            productDaoDemo.Infor(PRODUCT);
-
-            Console.WriteLine("\n");
-
-            categoryDaoDemo.Infor(CATEGORY);
         }
     }
 }

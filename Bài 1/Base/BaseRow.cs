@@ -6,18 +6,18 @@ namespace Bài_1.Base
     {
         public int id
         {
-            get { return id; }
-            set { id = value; }
+            get;
+            set;
         }
         public string name
         {
-            get { return name; }
-            set { name = value; }
+            get;
+            set;
         }
         public string typename
         {
-            get { return typename; }
-            set {  typename = value; }
+            get;
+            set;
         }
         public virtual void Infor()
         {

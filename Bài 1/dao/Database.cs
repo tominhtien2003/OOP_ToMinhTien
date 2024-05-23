@@ -7,21 +7,14 @@ namespace Bài_1.dao
 {
     public class Database
     {
-        public static Database instance { get; private set; }
+        private static readonly Lazy<Database> _instance = new Lazy<Database>(() => new Database());
+        public static Database instance => _instance.Value;
+
         public Dictionary<string, List<BaseRow>> stores;
         
-        public Database()
+        private Database()
         {
-            if (instance == null)
-            {
-                stores = new Dictionary<string, List<BaseRow>>();
-                instance = this;
-            }
-            else
-            {
-                Console.WriteLine("singleton is init");
-                return;
-            }      
+            stores = new Dictionary<string, List<BaseRow>>();
         }
         /// <summary>
         /// Insert a object

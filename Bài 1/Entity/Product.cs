@@ -7,8 +7,8 @@ namespace Bài_1
     {
         public int categoryId
         {
-            get { return categoryId; }
-            set { categoryId = value; }
+            get;
+            set;
         }
 
 
